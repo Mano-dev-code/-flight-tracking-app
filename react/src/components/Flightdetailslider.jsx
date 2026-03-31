@@ -3,6 +3,8 @@ import Slider from "react-slick";
 import Flightdetailcard from "./Flightdetailcard";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Lottie from "lottie-react";
+import animation from "../assets/No data found.json";
 
 const Flightdetailslider = ({ flights = [] }) => {
   const settings = {
@@ -23,9 +25,13 @@ const Flightdetailslider = ({ flights = [] }) => {
   // Show message if no flights are available
   if (!flights || flights.length === 0) {
     return (
-      <div className="px-1 mt-4">
-        <div className="alert alert-info text-center">
-          <p className="mb-0">Search for flights to see available options</p>
+      <div className="p-0 ">
+        <div className="">
+          <div className="alert alert-info text-center mb-0">
+            <Lottie animationData={animation} loop={true} autoplay={true} className="nodata "/>
+            <h6>No Data Matched</h6>
+            <p className="mb-0">Search for flights to see available options</p>
+          </div>
         </div>
       </div>
     );

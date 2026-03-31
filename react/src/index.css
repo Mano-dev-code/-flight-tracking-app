@@ -12,9 +12,9 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  --main-bg-color:rgba(214, 240, 250, 0.769);
+  --main-bg-color:rgba(236, 244, 254, 0.769);
   --card-design-border:0px ;
-  --card-design-background:rgb(248, 255, 255);
+  --card-design-background:rgb(240, 245, 255);
 }
 
 .poppins-regular {
@@ -26,20 +26,85 @@ body{
   font-family: "Poppins",
     sans-serif;
 }
+/* Sidebar Base */
+.Sidebar {
+  width: 250px;
+  height: 100vh;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 10px;
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+/* Desktop - always visible */
+@media (min-width: 768px) {
+  .Sidebar {
+    transform: translateX(0);
+    position: relative;
+  }
+}
+.hamburger {
+  position: fixed;
+  top: px;
+  left: px;
+  z-index: 100;
+  font-size: 24px;
+
+color: #000;
+  border-radius: 5px;
+  padding: px;
+}
+.hamburger:active{
+  opacity: 0;
+}
+
+/* Mobile - hidden by default */
+@media (max-width: 768px) {
+  .Sidebar {
+    transform: translateX(-100%);
+  }
+
+  .Sidebar.open{
+    transform: translateX(0);
+}
+
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+/* Hamburger */
+.hamburger {
+  font-size: 24px;
+  border: none;
+  background: none;
+  padding: 10px;
+}
 #head{
   font-family: "Poppins", sans-serif;
-  color: rgb(60, 5, 5);
+  color: rgb(152, 108, 255);
 }
 .Sidebar{
   width:200px;
   height: 100vh;
-  background-color: #ece2f4;
-  color:black;
+  background-color: hsl(0, 2%, 12%);
+  color:rgb(255, 255, 255) !important;
   font-family: "Poppins", sans-serif;
 }
 .sidebar-links ul li a{
   text-decoration:none;
-  color: black;
+  color: rgb(255, 255, 255);
   
 }
 .sidebar-links ul li.active{
@@ -57,14 +122,44 @@ body{
   width: 100%;
 
 }
+.main-layout {
+  display: flex;
+  gap: 20px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .main-layout {
+    flex-direction: column;
+  }
+}
 .card-des{
   border:var(--card-design-border)!important;
   background-color:var(--card-design-background)!important;
+  color: rgb(0, 0, 0) !important;
 }
 .custom-date {
   position: relative;
   background-color: #fff !important;
   color: #000 !important;
+}
+.route-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+  .route-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .route-section hr {
+    display: none;
+  }
 }
 
 /* Force calendar icon visibility */
@@ -77,18 +172,23 @@ body{
 .submit{
   background-color:black;
 }
-.btn-color{
-  border: none !important;
-  background-color: rgb(8, 224, 80) !important;
-}
-.btn-color:hover{
-  background-color: rgb(10, 208, 76) !important;
-  }
+
+
 .form-control{
   border:0px !important;
 }
 .form-control:focus {
-  border: 0px !important;
+  border: 0px  !important;
+outline:none !important;
+}
+.butn{
+  background-color: rgb(25, 214, 25) !important;
+  outline: none;
+  border: none;
+  height: 40px;
+}
+.butn:hover{
+  background-color: rgb(17, 194, 17) !important;
 }
 .form-label{
   font-size:15px;
@@ -97,4 +197,19 @@ body{
 .dots{
   position: relative;
   bottom:8px;
+}
+.nodata{
+  width: 10%;
+  margin: auto;
+}
+#filter {
+  position: sticky;
+  top: 10px;
+}
+/* MOBILE FIX */
+@media (max-width: 768px) {
+  #filter {
+    position: relative;
+    top: 0;
+  }
 }

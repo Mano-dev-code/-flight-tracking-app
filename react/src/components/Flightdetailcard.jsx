@@ -1,7 +1,6 @@
-import React from "react";
+
 import { HiOutlineDotsHorizontal } from "react-icons/hi";
 import Card from "react-bootstrap/Card";
-
 const Flightdetailcard = ({ flight }) => {
   // Provide default values if flight data is not available
   const {
@@ -53,7 +52,7 @@ const Flightdetailcard = ({ flight }) => {
   return (
     <div>
       <Card
-        className="mx-2 rounded shadow-sm"
+        className="mx-2  rounded shadow-sm"
         style={{ border: "1px solid #e0e0e0" }}
       >
         <Card.Body>
@@ -75,7 +74,7 @@ const Flightdetailcard = ({ flight }) => {
           {/* Main Content: Airline Info */}
           <div className="d-flex align-items-center justify-content-between gap-3">
             {/* Left: Airline & Route Info */}
-            <div className="d-flex align-items-center gap-3 flex-grow-1">
+            <div className="d-flex align-items-center gap-3 flex-grow-1 p-1 mt-0">
               {/* Airline Logo */}
               <div>
                 <img
@@ -136,7 +135,7 @@ const Flightdetailcard = ({ flight }) => {
                 </div>
 
                 {/* Duration */}
-                <div className="mt-2">
+                <div className="me-5">
                   <small className="text-muted">
                     Duration: <span className="fw-bold">{duration}</span>
                   </small>
@@ -150,17 +149,12 @@ const Flightdetailcard = ({ flight }) => {
                 ₹{price.amount.toLocaleString("en-IN")}
               </h5>
               <p className="mb-2 text-muted small">{price.currency}</p>
-              {/* <button
-                className="btn btn-sm btn-success fw-bold"
-                style={{ padding: "0.4rem 1rem", fontSize: "0.85rem" }}
-              >
-                Book Now
-              </button> */}
+               
             </div>
           </div>
 
           {/* Footer: Date Info */}
-          <div className="mt-3 pt-2" style={{ borderTop: "1px solid #f0f0f0" }}>
+          {/* <div className="mt-3 pt-2" style={{ borderTop: "1px solid #f0f0f0" }}>
             <small className="text-muted">
               Departure: <span className="fw-bold">{departure.date}</span>
               {departure.date !== arrival.date && (
@@ -170,7 +164,7 @@ const Flightdetailcard = ({ flight }) => {
                 </>
               )}
             </small>
-          </div>
+          </div> */}
         </Card.Body>
       </Card>
     </div>
