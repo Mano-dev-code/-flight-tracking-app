@@ -90,10 +90,11 @@ const Flightsearchcard = ({ onFlightsFound, onSearchStart }) => {
             {/* RIGHT */}
             <div className="col-md-6 mt-5">
               <Form onSubmit={searchFlights}>
-                <Form.Group className="mb-4">
+                <Form.Group className="mb-4" controlId="from">
                   <Form.Label className="fs-6">From</Form.Label>
                   <Form.Control
                     type="text"
+                    name="from"
                     placeholder="Chennai"
                     value={from}
                     onChange={(e) => setFrom(e.target.value)}
@@ -106,19 +107,21 @@ const Flightsearchcard = ({ onFlightsFound, onSearchStart }) => {
                   <Form.Control
                     type="text"
                     placeholder="Mumbai"
+                    name="to"
                     value={to}
                     onChange={(e) => setTo(e.target.value)}
                     disabled={loading}
                   />
                 </Form.Group>
 
-                <Form.Group className="mb-4 ">
+                <Form.Group className="mb-4" controlId="date">
                   <Form.Label className="fs-6">Date</Form.Label>
                   <DatePicker
                     selected={date}
                     onChange={(date) => setDate(date)}
                     className="form-control ms-4"
                     dateFormat="dd-MM-yyyy"
+                    name="date"
                     disabled={loading}
                   />
                 </Form.Group>

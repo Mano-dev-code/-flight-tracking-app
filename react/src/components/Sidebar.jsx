@@ -17,7 +17,7 @@ const Sidebar = () => {
       )}
 
       <div id="side-menu" className={`Sidebar ${isOpen ? "open" : ""}`}>
-        <div>
+        <div >
           <h3 id="head" className="fw-bold py-3 text-center">
             🚀 fly High
           </h3>
