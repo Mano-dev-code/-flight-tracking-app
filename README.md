@@ -59,7 +59,7 @@ project-root/
 ### 1️⃣ Clone the repository
 
 ```
-git clone https://github.com/your-username/your-repo-name.git
+git clone https://github.com/Mano-dev-code/-flight-tracking-app
 cd your-repo-name
 ```
 
