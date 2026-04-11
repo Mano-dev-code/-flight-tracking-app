@@ -32,7 +32,9 @@ const Flightsearchcard = ({ onFlightsFound, onSearchStart }) => {
 
     try {
       // Correct backend URL
-      const apiUrl = `http://localhost:3000/api/flights?from=${encodeURIComponent(from)}&to=${encodeURIComponent(to)}&date=${date.toISOString().split("T")[0]}`;
+     const BASE_URL = import.meta.env.VITE_API_URL;
+
+     const apiUrl = `${BASE_URL}/api/flights?from=${encodeURIComponent(from)}&to=${encodeURIComponent(to)}`;
 
       const response = await fetch(apiUrl);
 
@@ -60,7 +62,7 @@ const Flightsearchcard = ({ onFlightsFound, onSearchStart }) => {
     } catch (err) {
       console.error("Error fetching flights:", err);
       setError(
-        `Error: ${err.message}. Make sure backend is running on port 3000.`,
+        `Error: ${err.message}.Failed to fetch flights. Please try again.`,
       );
     } finally {
       setLoading(false);
