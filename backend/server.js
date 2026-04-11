@@ -600,11 +600,8 @@ app.get("/api/cities", (req, res) => {
 });
 
 // Start server
-app.listen(3000, () => {
-  console.log("✅ Server running at http://localhost:3000");
-  console.log(
-    "📍 API Endpoint: http://localhost:3000/api/flights?from=Delhi&to=Mumbai",
-  );
-  console.log("📋 All flights: http://localhost:3000/api/flights/all");
-  console.log("🏙️  Cities: http://localhost:3000/api/cities");
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`✅ Server running on port ${PORT}`);
 });
