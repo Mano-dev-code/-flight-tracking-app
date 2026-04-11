@@ -519,12 +519,13 @@ app.get("/api/flights", (req, res) => {
   const { from, to } = req.query;
 
   // Validate input
-  if (!from || !to) {
-    return res.status(400).json({
-      success: false,
-      error: "from and to parameters are required",
-    });
-  }
+if (!from || !to) {
+  return res.json({
+    success: true,
+    data: allFlights,
+    message: "Showing all flights (no filters applied)",
+  });
+}
 
   // Convert to lowercase for case-insensitive matching
   const fromLower = from.toLowerCase().trim();
