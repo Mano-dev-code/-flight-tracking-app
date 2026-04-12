@@ -32,7 +32,7 @@ const Flightsearchcard = ({ onFlightsFound, onSearchStart }) => {
 
     try {
       // Correct backend URL
-     const BASE_URL = import.meta.env.VITE_API_URL;
+      const BASE_URL = "https://flight-tracking-app.onrender.com";
 
      const apiUrl = `${BASE_URL}/api/flights?from=${encodeURIComponent(from)}&to=${encodeURIComponent(to)}`;
 
@@ -40,6 +40,7 @@ const Flightsearchcard = ({ onFlightsFound, onSearchStart }) => {
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
+      
       }
 
       const data = await response.json();
