@@ -83,7 +83,8 @@ npm run dev
 Runs on:
 http://localhost:5173
 
-##🔗 API Endpoints
+## 🔗 Add End Points
+
 GET /api/flights?from=City&to=City → Filter flights
 GET /api/flights/all → Get all flights
 GET /api/cities → Get available cities
@@ -96,7 +97,7 @@ Route (City → City)
 Price
 Vertical slider for better UX
 
-##🧠 Learning Highlights
+## 🧠 Learning Highlights
 Connecting React frontend with Express backend
 Handling API requests using fetch
 Dynamic UI rendering with props
@@ -104,27 +105,27 @@ Managing state using React Hooks
 Building reusable components
 Debugging real-world errors
 
-##⚠️ Known Limitations
+## ⚠️ Known Limitations
 No authentication
 No real payment integration
 Static dataset (mock data)
 
-##📈 Future Improvements
+## 📈 Future Improvements
 Add date-based filtering
 Integrate real flight APIs
 Add booking system
 Improve UI/UX (like MakeMyTrip)
 Add database for production-ready deployment
 
-##🚀 Deployment Details
+## 🚀 Deployment Details
 Frontend deployed using Vercel
 Backend deployed using Render
 
-##👨‍💻 Author
+## 👨‍💻 Author
 
 Manikandan
 BCA Graduate | Aspiring Full Stack Developer
 
-##⭐ Support
+## ⭐ Support
 
 If you found this project useful, consider giving it a ⭐ on GitHub!
